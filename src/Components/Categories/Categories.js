@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 
 export function Categories(props) {
 
-  const { activeCategory, categories } = props;
+  const { activeCategory, categories, selectCategory } = props;
 
   return (
     <>
@@ -15,7 +15,7 @@ export function Categories(props) {
         <p id='categoriesTitle'>Browse Categories</p>
         <div id='categoryButtonsContainer'>
           {categories.map((category, idx) => (
-            <Button variant='outlined' id='categoryButton' key={`category-${idx}`} onClick={() => props.selectCategory(category.name)}>{category.name}</Button>
+            <Button variant='outlined' id='categoryButton' key={`category-${idx}`} onClick={() => selectCategory(category.name)}>{category.name}</Button>
           ))}
         </div>
       </section>
@@ -24,7 +24,6 @@ export function Categories(props) {
 }
 
 const mapStateToProps = ({ categories }) => {
-  console.log(categories);
   return {
     categories: categories.categories,
     activeCategory: categories.activeCategory

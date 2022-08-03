@@ -19,11 +19,17 @@ For this assignment, you will be starting the process of creating an e-Commerce 
   - Identify that category as selected (change of class/display)
   - Show a list of products associated with the category
 
-<!--
+#### Phase 2: Combine Reducers (2 Aug 2022)
 
-#### Phase 2: (2 Aug 2022)
+Continue work on the e-Commerce storefront, breaking up the store into multiple reducers and sharing functionality/data between components
 
 ##### Phase 2 Feature Tasks
+
+- Continue to use Material UI Components for layout and styling
+- Add a “Cart” indicator to the header, like this: Cart (0)
+- Create a new Cart component to show the items in the user’s cart
+
+<!--
 
 #### Phase 3: (3 Aug 2022)
 

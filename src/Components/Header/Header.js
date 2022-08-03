@@ -1,11 +1,12 @@
 import './Header.scss';
+import SimpleCart from '../SimpleCart/SimpleCart';
 
 export default function Header() {
   return (
     <>
       <section id='header'>
         <h1>The Store</h1>
-        <div id='cart'>CART (0)</div>
+        <SimpleCart />
       </section>
     </>
   )
