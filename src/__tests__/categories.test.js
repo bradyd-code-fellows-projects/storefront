@@ -15,4 +15,3 @@ describe('Categories Redux Tests', () => {
     expect(state.activeCategory).toEqual('');
   })
 })
-git 
