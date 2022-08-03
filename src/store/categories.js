@@ -32,6 +32,7 @@ const initialState = {
     }
   ],
   activeCategory: '',
+  cart: [],
 };
 
 function categoryReducer(state = initialState, action) {
@@ -51,7 +52,6 @@ function categoryReducer(state = initialState, action) {
 };
 
 export const selectCategory = (category) => {
-  console.log(`selected ${category}`)
   return {
     type: 'SELECT_CATEGORY',
     payload: category

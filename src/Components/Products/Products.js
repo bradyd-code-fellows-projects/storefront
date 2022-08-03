@@ -4,7 +4,8 @@ import { Grid, Card, Typography, Button } from '@mui/material';
 
 
 export function Products(props) {
-  console.log('products: ', props.products);
+  const { handleAddToCart } = props;
+
   return (
     <>
       <Grid
@@ -18,7 +19,7 @@ export function Products(props) {
             <Typography component='div'>{product.productName}</Typography>
             <Typography>{product.description}</Typography>
             <Typography>{product.price}</Typography>
-            <Button>Add to Cart</Button>
+            <Button onClick={() => handleAddToCart}>Add to Cart</Button>
             <Button>View Details</Button>
           </Card>
         ))}
@@ -35,7 +36,6 @@ const mapStateToProps = ({ categories }) => {
       productsList = obj.products
     }
   })
-  console.log('list: ', productsList);
 
   return {
     activeCategory: categories.activeCategory,
