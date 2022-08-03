@@ -1,8 +1,11 @@
+import './Footer.scss';
 
 export default function Footer() {
   return (
     <>
-    <p>Footer</p>
+      <section>
+        <p>Footer</p>
+      </section>
     </>
   )
 }

@@ -1,34 +1,59 @@
 const initialState = {
   categories: [
-    { name: 'Electronics', products: ['TV', 'Macbook'] },
-    { name: 'Tools', products: ['Screwdriver', 'wrench'] }
+    {
+      name: 'Electronics',
+      products: [
+        {
+          productName: 'TV',
+          price: '$599.99',
+          description: '"The Office" player'
+        },
+        {
+          productName: 'Macbook',
+          price: '1299.99',
+          description: 'Code machine'
+        }
+      ]
+    },
+    {
+      name: 'Tools',
+      products: [
+        {
+          productName: 'Screwdriver',
+          price: '$129.99',
+          description: 'battery-powered tool to drive screws'
+        },
+        {
+          productName: 'wrench',
+          price: '$5.99',
+          description: 'manual tool for tightening/loosening bolts/nuts'
+        }
+      ]
+    }
   ],
-  activeCategory: null,
+  activeCategory: '',
 };
 
 function categoryReducer(state = initialState, action) {
-  switch (action.type) {
-    case 'SELECT':
+  let { type, payload } = action;
+
+  switch (type) {
+    case 'SELECT_CATEGORY':
       return {
-        ...state,
-        categories: state.map(category => {
-          if (category.name === action.name) {
-            return {
-              name: category.name,
-              products: category.products
-            }
-          }
-          return category;
-        })
+        ...state, activeCategory: payload
       }
+    case 'RESET':
+      return initialState;
+
     default:
       return state
   }
 };
 
 export const selectCategory = (category) => {
+  console.log(`selected ${category}`)
   return {
-    type: 'SELECT',
+    type: 'SELECT_CATEGORY',
     payload: category
   }
 };

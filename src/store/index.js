@@ -1,10 +1,8 @@
 import { combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from '@redux-devtools/extension';
-import votesReducer from './votes';
-import categoryReducer from './products'
+import categoryReducer from './categories'
 
 let reducers = combineReducers({
-  votes: votesReducer,
   categories: categoryReducer
 });
 
