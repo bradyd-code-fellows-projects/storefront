@@ -1,6 +1,7 @@
+import './Categories.scss';
 import { connect } from 'react-redux';
 import { selectCategory, reset } from '../../store/categories';
-import './Categories.scss';
+import { Button } from '@mui/material';
 
 export function Categories(props) {
 
@@ -8,12 +9,15 @@ export function Categories(props) {
 
   return (
     <>
-    <h2>Active Category: {activeCategory}</h2>
       <section id='categories'>
-        <p id='categoriesTitle'>Categories</p>
-        {categories.map((category, idx) => (
-          <button key={`category-${idx}`} onClick={() => props.selectCategory(category.name)}>{category.name}</button>
-        ))}
+        <h2>Active Category: {activeCategory}</h2>
+        <h3>Category Description Goes Here</h3>
+        <p id='categoriesTitle'>Browse Categories</p>
+        <div id='categoryButtonsContainer'>
+          {categories.map((category, idx) => (
+            <Button variant='outlined' id='categoryButton' key={`category-${idx}`} onClick={() => props.selectCategory(category.name)}>{category.name}</Button>
+          ))}
+        </div>
       </section>
     </>
   )

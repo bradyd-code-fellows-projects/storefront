@@ -1,6 +1,18 @@
 #categories {
-  margin-top: 20px;
+  width: 90%;
+  height: 15%;
+  margin: 20px auto;
   border: solid 2px red;
-  display: flexbox;
-  align-content:space-between;
+}
+
+#categories h2, h3{
+  margin-left: 20%;
+}
+
+#categoryButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 10px 10px;
 }

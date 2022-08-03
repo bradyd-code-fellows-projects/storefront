@@ -9,7 +9,7 @@ const initialState = {
           description: '"The Office" player'
         },
         {
-          name: 'Macbook',
+          productName: 'Macbook',
           price: '1299.99',
           description: 'Code machine'
         }
@@ -19,12 +19,12 @@ const initialState = {
       name: 'Tools',
       products: [
         {
-          name: 'Screwdriver',
+          productName: 'Screwdriver',
           price: '$129.99',
           description: 'battery-powered tool to drive screws'
         },
         {
-          name: 'wrench',
+          productName: 'wrench',
           price: '$5.99',
           description: 'manual tool for tightening/loosening bolts/nuts'
         }
