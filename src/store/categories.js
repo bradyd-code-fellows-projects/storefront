@@ -31,8 +31,7 @@ const initialState = {
       ]
     }
   ],
-  activeCategory: '',
-  cart: [],
+  activeCategory: ''
 };
 
 function categoryReducer(state = initialState, action) {
