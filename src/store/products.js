@@ -3,20 +3,19 @@ const initialState = {
   cartCount: 0
 }
 
-export default function productReducer(state = initialState, action, product) {
+export default function productReducer(state = initialState, action) {
   let { type } = action;
   switch (type) {
     case 'ADD_TO_CART':
-      return {
-        ...state, cart: state.cart, cartCount: state.cartCount + 1
-      }
+      console.log('payload: ', action.payload);
+      return [...state.cart, {cart: state.cart.push(action.payload), cartCount: state.cartCount + 1 }]
     default:
-      return state
+  return state
   }
 }
 
-export const handleAddToCart = (product, state = initialState) => {
-  state.cart.push(product);
+export const handleAddToCart = (product) => {
+  // state.cart.push(product);
   console.log(`${product.productName} added to cart`);
   return {
     type: 'ADD_TO_CART',
