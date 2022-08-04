@@ -1,6 +1,7 @@
 import './Products.scss';
 import { connect } from "react-redux";
 import { Grid, Card, Typography, Button } from '@mui/material';
+import { handleAddToCart } from '../../store/products';
 
 
 export function Products(props) {
@@ -19,7 +20,7 @@ export function Products(props) {
             <Typography component='div'>{product.productName}</Typography>
             <Typography>{product.description}</Typography>
             <Typography>{product.price}</Typography>
-            <Button onClick={() => handleAddToCart}>Add to Cart</Button>
+            <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
             <Button>View Details</Button>
           </Card>
         ))}
@@ -43,4 +44,8 @@ const mapStateToProps = ({ categories }) => {
   }
 }
 
-export default connect(mapStateToProps)(Products);
+const mapDispatchToProps = {
+  handleAddToCart
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Products);

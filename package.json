@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.3",
     "@redux-devtools/extension": "^3.2.2",
     "@testing-library/jest-dom": "^5.16.4",
@@ -15,6 +16,7 @@
     "react-redux": "^8.0.2",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
+    "sass": "^1.54.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -1,19 +1,34 @@
+import React from 'react';
 import { connect } from 'react-redux';
-import { List } from '@mui/material';
+import { List, ListItem, ListItemText, ListItemButton, IconButton, Collapse } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { red } from '@mui/material/colors';
 
 export function SimpleCart(props) {
   const { cart, cartCount } = props;
-  return(
-    <>
-    <List>{`Cart (${cartCount})`}
+  const [open, setOpen] = React.useState(true);
+  const handleOpenCart = () => {
+    setOpen(!open);
+  };
 
-    </List>
+  return (
+    <>
+      <List>
+        <ListItemButton onClick={handleOpenCart}>{`Cart (${cartCount})`}</ListItemButton>
+        <Collapse in={open}>
+          {cart.map((product, idx) => (
+            <ListItem key={`cartItem-${idx}`}>
+              <ListItemText primary={product.productName}></ListItemText>
+              <IconButton edge='end' aria-label='delete'><DeleteIcon sx={{ color: red[500] }} /></IconButton>
+            </ListItem>
+          ))}
+        </Collapse>
+      </List>
     </>
   )
 }
 
 const mapStateToProps = ({ products }) => {
-  console.log('cart: ', products.cart, 'cartCount: ', products.cartCount);
   return {
     cart: products.cart,
     cartCount: products.cartCount
