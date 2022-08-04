@@ -29,11 +29,18 @@ Continue work on the e-Commerce storefront, breaking up the store into multiple 
 - Add a “Cart” indicator to the header, like this: Cart (0)
 - Create a new Cart component to show the items in the user’s cart
 
-<!--
+#### Phase 3: Redux - Asynchronous Actions (3 Aug 2022)
 
-#### Phase 3: (3 Aug 2022)
+ Connect the Virtual Store to an API to retrieve live data from your data source, using thunk to enable asynchronous actions
 
 ##### Phase 3 Feature Tasks
+
+- Continue to use Material UI Components for layout and styling
+- Load the category and product list from a remote API on page load.
+- Update the product quantity in stock when adding items to (or removing from) the cart
+- Continue to use multiple reducers
+
+<!--
 
 #### Phase 4: (4 Aug 2022)
 
