@@ -1,11 +1,17 @@
-import './Products.scss';
+import { useEffect } from 'react';
 import { connect } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 import { Grid, Card, Typography, Button } from '@mui/material';
-import { handleAddToCart } from '../../store/products';
-
+import { handleAddToCart } from '../../store/actions';
+import { getProducts } from '../../store/products'
+import './Products.scss';
 
 export function Products(props) {
-  const { handleAddToCart } = props;
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
 
   return (
     <>
@@ -44,8 +50,4 @@ const mapStateToProps = ({ categories }) => {
   }
 }
 
-const mapDispatchToProps = {
-  handleAddToCart
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Products);
+export default connect(mapStateToProps)(Products);
