@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { List, ListItem, ListItemText, ListItemButton, IconButton, Collapse } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { red } from '@mui/material/colors';
+import { handleDeleteFromCart } from '../../store/actions';
 
 export function SimpleCart(props) {
   const { cart, cartCount, handleDeleteFromCart } = props;
@@ -19,7 +20,7 @@ export function SimpleCart(props) {
           {cart && cart.map((product, idx) => (
             <ListItem key={`cartItem-${idx}`}>
               <ListItemText primary={product.productName}></ListItemText>
-              <IconButton edge='end' aria-label='delete'><DeleteIcon onClick={handleDeleteFromCart} sx={{ color: red[500] }} /></IconButton>
+              <IconButton edge='end' aria-label='delete' onClick={handleDeleteFromCart}><DeleteIcon sx={{ color: red[500] }} /></IconButton>
             </ListItem>
           ))}
         </Collapse>
@@ -36,7 +37,7 @@ const mapStateToProps = ({ products }) => {
 }
 
 const mapDispatchToProps = {
-
+  handleDeleteFromCart
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SimpleCart);

@@ -1,24 +1,83 @@
-const initialState = {
-  cart: [],
-  cartCount: 0
-}
+import axios from 'axios';
 
-export default function productReducer(state = initialState, action) {
-  let { type } = action;
+// const initialState = {
+  // cart: [],
+  // cartCount: 0
+// }
+
+const initialState = [
+  {
+    productName: 'TV',
+    category: 'Electronics',
+    price: '$599.99',
+    description: '"The Office" player'
+  },
+  {
+    productName: 'Macbook',
+    category: 'Electronics',
+    price: '1299.99',
+    description: 'Code machine'
+  },
+  {
+    productName: 'Screwdriver',
+    category: 'Tools',
+    price: '$129.99',
+    description: 'battery-powered tool to drive screws'
+  },
+  {
+    productName: 'wrench',
+    category: 'Tools',
+    price: '$5.99',
+    description: 'manual tool for tightening/loosening bolts/nuts'
+  }
+];
+
+export default function productsReducer(state = initialState, action) {
+  let { type, payload } = action;
   switch (type) {
+    case 'GET_PRODUCTS':
+      return payload.results;
     case 'ADD_TO_CART':
-      console.log('payload: ', action.payload);
-      return [...state.cart, {cart: state.cart.push(action.payload), cartCount: state.cartCount + 1 }]
+      return state.map(product => {
+        if(product.name === payload.name){
+          product.inventory = product.inventory - 1;
+        }
+        return product;
+      });
+    case 'REMOVE_FROM_CART':
+      return state.map(product => {
+        if(product.name === payload.name){
+          product.inventory = product.inventory + 1;
+        }
+        return product;
+      });
+    // case 'ADD_TO_CART':
+    //   return state.map(product => {
+    //     if (product.name === payload.name) {
+    //       product.inventory = product.inventory - 1;
+    //     }
+    //     return product;
+    //   });
+    // case 'REMOVE_FROM_CART':
+    //   return state.map(product => {
+    //     if (product.name === payload.name) {
+    //       product.inventory = product.inventory + 1;
+    //     }
+    //     return product;
+    //   });
     default:
-  return state
+      return state;
   }
 }
 
-export const handleAddToCart = (product) => {
-  // state.cart.push(product);
-  console.log(`${product.productName} added to cart`);
+export const getProducts = () => async (dispatch, getState) => {
+  let response = await axios.get('https://api-js401.herokuapp.com/api/v1/products');
+  dispatch(setProducts(response.data))
+}
+
+export const setProducts = (data) => {
   return {
-    type: 'ADD_TO_CART',
-    payload: product
+    type: 'GET_PRODUCTS',
+    payload: data
   }
 }

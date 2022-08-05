@@ -6,7 +6,7 @@ export default function Header() {
     <>
       <section id='header'>
         <h1>The Store</h1>
-        <SimpleCart />
+        {/* <SimpleCart /> */}
       </section>
     </>
   )
