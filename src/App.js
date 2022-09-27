@@ -4,7 +4,7 @@ import Categories from './Components/Categories/Categories';
 import Products from './Components/Products/Products';
 import Footer from './Components/Footer/Footer';
 
-function App(props) {
+const App = (props) => {
   return (
     <>
       <Header />

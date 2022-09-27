@@ -1,10 +1,5 @@
 import axios from 'axios';
 
-// const initialState = {
-  // cart: [],
-  // cartCount: 0
-// }
-
 const initialState = [
   {
     productName: 'TV',
@@ -39,32 +34,18 @@ export default function productsReducer(state = initialState, action) {
       return payload.results;
     case 'ADD_TO_CART':
       return state.map(product => {
-        if(product.name === payload.name){
+        if (product.name === payload.name) {
           product.inventory = product.inventory - 1;
         }
         return product;
       });
     case 'REMOVE_FROM_CART':
       return state.map(product => {
-        if(product.name === payload.name){
+        if (product.name === payload.name) {
           product.inventory = product.inventory + 1;
         }
         return product;
       });
-    // case 'ADD_TO_CART':
-    //   return state.map(product => {
-    //     if (product.name === payload.name) {
-    //       product.inventory = product.inventory - 1;
-    //     }
-    //     return product;
-    //   });
-    // case 'REMOVE_FROM_CART':
-    //   return state.map(product => {
-    //     if (product.name === payload.name) {
-    //       product.inventory = product.inventory + 1;
-    //     }
-    //     return product;
-    //   });
     default:
       return state;
   }
