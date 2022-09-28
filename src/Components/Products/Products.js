@@ -1,17 +1,21 @@
 import { useEffect } from 'react';
 import { connect } from "react-redux";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Grid, Card, Typography, Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import { handleAddToCart } from '../../store/actions';
-import { getProducts } from '../../store/products'
 import './Products.scss';
 
-export function Products(props) {
-  let dispatch = useDispatch();
+const Img = styled('img')({
+  margin: 'auto',
+  display: 'block',
+  maxWidth: '50%',
+  maxHeight: '50%',
+});
 
-  useEffect(() => {
-    dispatch(getProducts());
-  }, []);
+const Products = (props) => {
+  let dispatch = useDispatch();
+  let products = props.products.filter(product => product.category === props.activeCategory);
 
   return (
     <>
@@ -21,9 +25,10 @@ export function Products(props) {
       justifyContent='space-around'
       alignItems='center'
       >
-        {props.products.map((product, idx) => (
+        {products.map((product, idx) => (
           <Card key={`product-${idx}`}>
-            <Typography component='div'>{product.productName}</Typography>
+            <Typography component='div'>{product.name}</Typography>
+            <Img alt={`${product.name}-image`} src={`/assets/${product.img}`}/>
             <Typography>{product.description}</Typography>
             <Typography>{product.price}</Typography>
             <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
@@ -35,18 +40,10 @@ export function Products(props) {
   )
 }
 
-const mapStateToProps = ({ categories }) => {
-  let a = categories.categories;
-  let productsList = [];
-  a.forEach(obj => {
-    if (categories.activeCategory === obj.name) {
-      productsList = obj.products
-    }
-  })
-
+const mapStateToProps = (state) => {
   return {
-    activeCategory: categories.activeCategory,
-    products: productsList
+    products: state.products,
+    activeCategory: state.activeCategory
   }
 }
 

@@ -9,7 +9,7 @@ const App = (props) => {
     <>
       <Header />
       <Categories />
-      {/* <Products /> */}
+      <Products />
       <Footer />
     </>
   )

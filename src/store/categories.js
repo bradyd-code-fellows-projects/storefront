@@ -1,15 +1,6 @@
-import axios from 'axios';
+import data from '../data'
 
-const initialState = [
-  {
-    name: 'Electronics',
-    description: 'Edison devices'
-  },
-  {
-    name: 'Tools',
-    description: 'stuff builder helpers'
-  },
-];
+const initialState = data.categories;
 
 export default function categoriesReducer(state = initialState, action) {
   switch (action.type) {
@@ -17,5 +8,12 @@ export default function categoriesReducer(state = initialState, action) {
       return action.payload.results
     default:
       return state;
+  }
+}
+
+export const setCategories = (data) => {
+  return {
+    type: 'GET_CATEGORIES',
+    payload: data
   }
 }
