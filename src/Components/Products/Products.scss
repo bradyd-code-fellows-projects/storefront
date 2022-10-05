@@ -1,6 +1,17 @@
 #productGrid {
-  border: solid 2px green;
   width: 90%;
   height: 55%;
   margin: 20px auto;
+}
+
+#productCard {
+  height: fit-content;
+  width: fit-content;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 1vw auto;
+}
+
+#cardTitle {
+  text-align: center;
 }

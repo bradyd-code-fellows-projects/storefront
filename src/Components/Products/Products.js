@@ -9,8 +9,9 @@ import './Products.scss';
 const Img = styled('img')({
   margin: 'auto',
   display: 'block',
-  maxWidth: '50%',
-  maxHeight: '50%',
+  maxWidth: '200px',
+  maxHeight: '150px',
+  borderRadius: '10px'
 });
 
 const Products = (props) => {
@@ -21,13 +22,14 @@ const Products = (props) => {
     <>
       <Grid
       id='productGrid'
-      container spacing={3}
-      justifyContent='space-around'
+      direction='row'
+      container spacing='auto'
+      justifyContent='space-evenly'
       alignItems='center'
       >
         {products.map((product, idx) => (
-          <Card key={`product-${idx}`}>
-            <Typography component='div'>{product.name}</Typography>
+          <Card id='productCard' key={`product-${idx}`}>
+            <Typography id='cardTitle' component='div'>{product.name}</Typography>
             <Img alt={`${product.name}-image`} src={`/assets/${product.img}`}/>
             <Typography>{product.description}</Typography>
             <Typography>{product.price}</Typography>
