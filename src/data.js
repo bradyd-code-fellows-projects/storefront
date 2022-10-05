@@ -28,82 +28,146 @@ let products = [
   {
     name: "Apple",
     category: "Food",
-    img: "apple.png"
+    img: "apple.png",
+    description: ""
   },
   {
     name: "Pizza",
     category: "Food",
-    img: "pizza.png"
+    img: "pizza.png",
+    description: ""
   },
   {
     name: "Cake",
     category: "Food",
-    img: "cake.jpeg"
+    img: "cake.jpeg",
+    description: ""
   },
   {
     name: "Corn",
     category: "Food",
-    img: "corn.jpeg"
+    img: "corn.jpeg",
+    description: ""
+  },
+  {
+    name: "Steak",
+    category: "Food",
+    img: "steak.jpeg",
+    description: ""
+  },
+  {
+    name: "Ratatouille",
+    category: "Food",
+    img: "ratatouille.jpeg",
+    description: ""
   },
   {
     name: "TV",
     category: "Electronics",
-    img: "tv.jpeg"
+    img: "tv.jpeg",
+    description: ""
   },
   {
     name: "Laptop",
     category: "Electronics",
-    img: "laptop.jpeg"
+    img: "laptop.jpeg",
+    description: ""
   },
   {
     name: "iPhone",
     category: "Electronics",
-    img: "iphone.jpeg"
+    img: "iphone.jpeg",
+    description: ""
+  },
+  {
+    name: "Walkman",
+    category: "Electronics",
+    img: "walkman.jpeg",
+    description: ""
+  },
+  {
+    name: "Nintendo 64",
+    category: "Electronics",
+    img: "nintendo-64.jpeg",
+    description: ""
   },
   {
     name: "AirPods",
     category: "Electronics",
-    img: "airpods.jpeg"
+    img: "airpods.jpeg",
+    description: ""
   },
   {
     name: "Battleship",
     category: "Games",
-    img: "battleship.png"
+    img: "battleship.png",
+    description: ""
   },
   {
     name: "Settlers of Cataan",
     category: "Games",
-    img: "settlers-of-cataan.png"
+    img: "settlers-of-cataan.png",
+    description: ""
   },
   {
     name: "Dominos",
     category: "Games",
-    img: "dominos.png"
+    img: "dominos.png",
+    description: ""
   },
   {
     name: "Scrabble",
     category: "Games",
-    img: "scrabble.png"
+    img: "scrabble.png",
+    description: ""
+  },
+  {
+    name: "Cribbage",
+    category: "Games",
+    img: "cribbage.jpeg",
+    description: ""
+  },
+  {
+    name: "Chess",
+    category: "Games",
+    img: "chess.jpeg",
+    description: ""
   },
   {
     name: "Lightsaber",
     category: "Weapons",
-    img: "lightsaber.jpeg"
+    img: "lightsaber.jpeg",
+    description: ""
   },
   {
     name: "Halo Gravity Hammer",
     category: "Weapons",
-    img: "halo-gravity-hammer.png"
+    img: "halo-gravity-hammer.png",
+    description: ""
   },
   {
     name: "Skyrim Wabbajack",
     category: "Weapons",
-    img: "skyrim-wabbajack.png"
+    img: "skyrim-wabbajack.png",
+    description: ""
   },
   {
     name: "Legend of Zelda Master Sword",
     category: "Weapons",
-    img: "zelda-master-sword.png"
+    img: "zelda-master-sword.png",
+    description: ""
+  },
+  {
+    name: "Mario Kart Blue Shell",
+    category: "Weapons",
+    img: "blue-shell.png",
+    description: ""
+  },
+  {
+    name: "Indiana Jones Bull Whip",
+    category: "Weapons",
+    img: "whip.jpeg",
+    description: ""
   },
 ];
 let data = {

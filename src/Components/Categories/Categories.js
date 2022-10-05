@@ -24,15 +24,4 @@ const Categories = (props) => {
   )
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     categories: state.categories,
-//   }
-// }
-
-// const mapDispatchToProps = {
-//   selectCategory
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Categories);
 export default Categories;
